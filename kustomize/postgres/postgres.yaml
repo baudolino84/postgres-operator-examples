@@ -1,29 +1,29 @@
 apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
-  name: hippo
+  name: immichdb
 spec:
   postgresVersion: 17
   users:
-    - name: rhino
+    - name:  baudolino
       databases:
-        - zoo
+        - immichbasedb
   instances:
     - name: instance1
       dataVolumeClaimSpec:
         accessModes:
-        - "ReadWriteOnce"
+        - "ReadWriteMany"
         resources:
           requests:
-            storage: 1Gi
+            storage: 5Gi
   backups:
     pgbackrest:
       repos:
-      - name: repo1
+      - name: repo2
         volume:
           volumeClaimSpec:
             accessModes:
-            - "ReadWriteOnce"
+            - "ReadWriteMany"
             resources:
               requests:
-                storage: 1Gi
+                storage: 5Gi
