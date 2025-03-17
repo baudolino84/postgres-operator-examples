@@ -9,7 +9,7 @@ spec:
       databases:
         - immichbasedb
   instances:
-    - name: instance1
+    - name: instance2
       dataVolumeClaimSpec:
         accessModes:
         - "ReadWriteOnce"
