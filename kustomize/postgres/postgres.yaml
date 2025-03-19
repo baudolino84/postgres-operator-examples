@@ -12,7 +12,7 @@ spec:
     - name: instance2
       dataVolumeClaimSpec:
         accessModes:
-        - "ReadWriteOnce"
+        - "ReadWriteMany"
         resources:
           requests:
             storage: 5Gi
@@ -23,7 +23,7 @@ spec:
         volume:
           volumeClaimSpec:
             accessModes:
-            - "ReadWriteOnce"
+            - "ReadWriteMany"
             resources:
               requests:
                 storage: 5Gi
