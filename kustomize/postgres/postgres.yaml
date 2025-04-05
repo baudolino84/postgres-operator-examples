@@ -15,7 +15,7 @@ spec:
         - "ReadWriteMany"
         resources:
           requests:
-            storage: 50Gi
+            storage: 5Gi
   backups:
     pgbackrest:
       repos:
@@ -26,4 +26,4 @@ spec:
             - "ReadWriteMany"
             resources:
               requests:
-                storage: 50Gi
+                storage: 5Gi
