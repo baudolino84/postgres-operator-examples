@@ -20,6 +20,10 @@ spec:
   patroni:
     dynamicConfiguration:
       postgresql:
+        parameters:
+          #shared_preload_libraries: "timescaledb"
+          ssl: "off"
+          password_encryption: "md5"
         pg_hba:
           - "hostnossl all all all md5"
   backups:
