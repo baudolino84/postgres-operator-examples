@@ -2,12 +2,14 @@ apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
   name: immichdb
+  namespace: postgres-operator
 spec:
   postgresVersion: 17
   users:
     - name:  baudolino
       databases:
         - immichbasedb
+      options: 'SUPERUSER'
   instances:
     - name: instance2
       dataVolumeClaimSpec:
@@ -16,6 +18,15 @@ spec:
         resources:
           requests:
             storage: 5Gi
+  patroni:
+    dynamicConfiguration:
+      postgresql:
+        parameters:
+          #shared_preload_libraries: "timescaledb"
+          ssl: "off"
+          password_encryption: "md5"
+        pg_hba:
+          - "hostnossl all all all md5"
   backups:
     pgbackrest:
       repos:
