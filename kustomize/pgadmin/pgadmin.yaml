@@ -15,7 +15,7 @@ spec:
     - "ReadWriteOnce"
     resources:
       requests:
-        storage: 20Gi
+        storage: 30Gi
   serverGroups:
     - name: supply
       # An empty selector selects all postgresclusters in the Namespace
