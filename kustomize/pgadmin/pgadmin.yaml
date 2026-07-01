@@ -24,6 +24,8 @@ spec:
     settings:
       AUTHENTICATION_SOURCES: ['internal']
       SESSION_EXPIRATION_TIME: 1
+      MAX_SESSION_IDLE_TIME: 60
+      CHECK_SESSION_FILES_INTERVAL: 4
       # Uncomment DEBUG to enable debug logging in pgAdmin
       # DEBUG: "True"
       # Configure OAUTH by setting the following *AND* adding
