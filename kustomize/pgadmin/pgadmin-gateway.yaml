@@ -23,4 +23,4 @@ spec:
         name: default-tls
   addresses:
   - type: IPAddress
-    value: "10.50.50.227"
+    value: "10.50.70.227"
